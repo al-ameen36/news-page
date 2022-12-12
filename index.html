@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Hompage</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="page">
+        <nav x-data="{openMenu: false}" class="container d_flex justify_between align_center">
+            <a href="#" id="logo">
+                <img src="images/logo.svg" alt=""><span class="visually_hidden">News hompage</span>
+            </a>
+            <button @click="openMenu = true" class="mobile_only" id="open_menu"><img src="images/icon-menu.svg"
+                     alt=""></button>
+
+            <div x-show="openMenu" x-cloak
+                 @click="openMenu = false"
+                 x-transition.opacity class="backdrop"></div>
+            <div :class="openMenu && 'open'" class="menu_wrapper">
+                <button @click="openMenu = false" class="mobile_only" id="close_menu">
+                    <img src="images/icon-menu-close.svg" alt="">
+                    <span class="visually_hidden">close menu</span>
+                </button>
+                <ul class="nav_list">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Categories</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main class="container d_grid">
+            <section id="intro" class="flow" aria-labelledby="main_title">
+                <picture>
+                    <source media="(min-width: 768px)" srcset="images/image-web-3-desktop.jpg">
+                    <img src="images/image-web-3-mobile.jpg" alt="">
+                </picture>
+                <div class="intro_inner">
+                    <h1 id="main_title" class="title">The Bright Future of Web 3.0?</h1>
+                    <div class="flow">
+                        <p>We dive into the next evolution of the web that claims to put the power of the platforms back
+                            into the hands of the people. But is it really fulfilling its promise?</p>
+                        <a class="btn text_off-white" href="#">read more</a>
+                    </div>
+                </div>
+            </section>
+            <section id="new_posts" class="[ container ] [ bg_secondary text_off-white ]"
+                     aria-labelledby="new_post_title">
+                <h2 id="new_post_title" class="text_accent">New</h2>
+                <div class="post">
+                    <h3 class="post_title"><a href="#">Hydrogen VS Electric Cars</a></h3>
+                    <p class="post_summary">Will hydrogen-fueled cars ever catch up to EVs?</p>
+                </div>
+                <div class="post">
+                    <h3 class="post_title"><a href="#">The Downsides of AI Artistry</a></h3>
+                    <p class="post_summary">What are the possible adverse effects of on-demand AI image generation?</p>
+                </div>
+                <div class="post">
+                    <h3 class="post_title"><a href="#">Is VC Funding Drying Up?</a></h3>
+                    <p class="post_summary">Private funding by VC firms is down 50% YOY. We take a look at what that
+                        means.</p>
+                </div>
+            </section>
+            <section id="posts">
+                <div class="post d_flex">
+                    <picture>
+                        <img src="images/image-retro-pcs.jpg" alt="">
+                    </picture>
+                    <div class="content">
+                        <span class="post_number">01</span>
+                        <h4 class="post_title text_secondary"><a href="#">Reviving Retro PCs</a></h4>
+                        <p class="summary">What happens when old PCs are given modern upgrades?</p>
+                    </div>
+                </div>
+                <div class="post d_flex">
+                    <picture>
+                        <img src="images/image-top-laptops.jpg" alt="">
+                    </picture>
+                    <div class="content">
+                        <span class="post_number">02</span>
+                        <h4 class="post_title text_secondary"><a href="#">Top 10 Laptops of 2022</a></h4>
+                        <p class="summary">Our best picks for various needs and budgets.</p>
+                    </div>
+                </div>
+                <div class="post d_flex">
+                    <picture>
+                        <img src="images/image-gaming-growth.jpg" alt="">
+                    </picture>
+                    <div class="content">
+                        <span class="post_number">03</span>
+                        <h4 class="post_title text_secondary"><a href="#">The Growth of Gaming</a></h4>
+                        <p class="summary">How the pandemic has sparked fresh opportunities. </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/alpine.min.js"></script>
+</body>
+
+</html>
